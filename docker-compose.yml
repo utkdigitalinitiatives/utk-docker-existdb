@@ -1,0 +1,22 @@
+version: '3.4'
+services:
+  exist:
+    build: ./exist
+    ports:
+        - 8080:8080
+        - 8443:8443
+    volumes:
+      - type: volume
+        source: data
+        target: /exist/webapp/WEB-INF/data
+      - type: volume
+        source: config
+        target: /exist/config
+
+volumes:
+  data:
+    driver: local
+    name: exist-data
+  config:
+    driver: local
+    name: exist-config
