@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     git \
     yarn \
   && echo "Cloning Polk Papers app" \
-  &&  git clone --progress https://github.com/utkdigitalinitiatives/polk-correspondence-app.git polk \
+  && git clone --progress https://github.com/utkdigitalinitiatives/polk-correspondence-app.git polk \
   && cd polk \
   && echo "Building Polk Papers app" \
   && ant \
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 
 
 # Build and Launch Exist with our Applications
-FROM existdb/existdb:latest
+FROM existdb/existdb:release
 # Add dependencies
 ADD http://exist-db.org/exist/apps/public-repo/public/tei-publisher-lib-2.3.0.xar /exist/autodeploy/
 ADD http://exist-db.org/exist/apps/public-repo/public/tei-publisher-3.1.0.xar /exist/autodeploy/
