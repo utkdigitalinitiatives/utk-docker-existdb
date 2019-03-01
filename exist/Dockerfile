@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 
 
 # Build and Launch Exist with our Applications
-FROM existdb/existdb:release
+FROM existdb/existdb:4.4.0
 # Add dependencies
 ADD http://exist-db.org/exist/apps/public-repo/public/tei-publisher-lib-2.3.0.xar /exist/autodeploy/
 ADD http://exist-db.org/exist/apps/public-repo/public/tei-publisher-3.1.0.xar /exist/autodeploy/

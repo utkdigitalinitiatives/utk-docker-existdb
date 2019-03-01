@@ -14,4 +14,4 @@ How to Run
 
 .. code-block:: console
 
-   $ docker-compose up --build
+   $ docker-compose up --build -d
