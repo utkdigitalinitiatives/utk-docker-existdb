@@ -1,6 +1,7 @@
 # Build Polk App and Other XARs
 FROM kkarczmarczyk/node-yarn as builder
 WORKDIR /usr/src/app
+ARG BRANCH=master
 RUN apt-get update && apt-get install -y \
     ant \
     git \
@@ -8,6 +9,7 @@ RUN apt-get update && apt-get install -y \
   && echo "Cloning Polk Papers app" \
   && git clone --progress https://github.com/utkdigitalinitiatives/polk-correspondence-app.git polk \
   && cd polk \
+  && git checkout -b build_app origin/$BRANCH \
   && echo "Building Polk Papers app" \
   && ant \
   && ls build

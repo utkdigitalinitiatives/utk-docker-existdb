@@ -1,7 +1,10 @@
 version: '3.4'
 services:
   exist:
-    build: ./exist
+    build:
+      context: ./exist
+      args:
+        BRANCH: master
     ports:
         - 8080:8080
         - 8443:8443
