@@ -1,9 +1,10 @@
 # Build Polk App and Other XARs
-FROM kkarczmarczyk/node-yarn as builder
+FROM alpine:3.8.4 as builder
 WORKDIR /usr/src/app
 ARG BRANCH=master
-RUN apt-get update && apt-get install -y \
-    ant \
+RUN apk update && apk add \
+    openjdk8 \
+    apache-ant \
     git \
     yarn \
   && echo "Cloning Polk Papers app" \
