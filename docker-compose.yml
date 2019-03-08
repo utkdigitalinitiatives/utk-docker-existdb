@@ -4,7 +4,7 @@ services:
     build:
       context: ./exist
       args:
-        BRANCH: master
+        BRANCH: $BRANCH
     ports:
         - 8080:8080
         - 8443:8443
